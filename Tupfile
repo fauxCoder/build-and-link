@@ -3,8 +3,11 @@ include_rules
 
 INCLUDE_FLAGS = -I.
 
+# compile the cpp's, invoking the compiler for each individual file
 : foreach *.cpp |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) |> %B.o
+
+# link the o's + the static lib in a single invocation of the linker
 : *.o help/help.a |> $(CXX) %f -o %o |> example
 
-# generate a .gitignore which ignores itself and any output files.
+# generate a .gitignore which ignores itself + any output files
 .gitignore
