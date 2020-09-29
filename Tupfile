@@ -1,7 +1,9 @@
 # include definitions from Tuprules.tup
 include_rules
 
-: foreach *.cpp |> $(CXX) -c %f -o %o -I. |> %B.o
+INCLUDE_FLAGS = -I.
+
+: foreach *.cpp |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) |> %B.o
 : *.o help/help.a |> $(CXX) %f -o %o |> example
 
 # generate a .gitignore which ignores itself and any output files.

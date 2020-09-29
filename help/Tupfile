@@ -1,6 +1,8 @@
 include_rules
 
-: foreach *.cpp |> $(CXX) -c %f -o %o -I.. |> %B.o
+INCLUDE_FLAGS = -I..
+
+: foreach *.cpp |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) |> %B.o
 : *.o |> ar crs %o %f |> help.a
 
 .gitignore
