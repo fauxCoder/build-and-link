@@ -1,4 +1,8 @@
-.gitignore
+# include definitions from Tuprules.tup
+include_rules
 
-: foreach *.cpp |> gcc -c %f -o %o -I. |> %B.o
-: *.o help/help.a |> gcc %f -o %o |> example
+: foreach *.cpp |> $(CXX) -c %f -o %o -I. |> %B.o
+: *.o help/help.a |> $(CXX) %f -o %o |> example
+
+# generate a .gitignore which ignores itself and any output files.
+.gitignore

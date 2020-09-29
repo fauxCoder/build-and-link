@@ -1,4 +1,6 @@
-.gitignore
+include_rules
 
-: foreach *.cpp |> gcc -c %f -o %o -I.. |> %B.o
+: foreach *.cpp |> $(CXX) -c %f -o %o -I.. |> %B.o
 : *.o |> ar crs %o %f |> help.a
+
+.gitignore
