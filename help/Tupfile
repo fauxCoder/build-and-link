@@ -2,8 +2,8 @@ include_rules
 
 INCLUDE_FLAGS = -I..
 
-: foreach *.cpp |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) |> %B.o
+: foreach *.cpp |> !compile |> %B.o
 
-: *.o |> ar crs %o %f |> help.a
+: *.o |> !archive |> help.a
 
 .gitignore

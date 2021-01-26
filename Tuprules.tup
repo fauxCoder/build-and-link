@@ -1,1 +1,5 @@
 CXX = clang
+
+!compile = |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) -std=c++17 |>
+!archive = |> ar crs %o %f |>
+!link = |> $(CXX) %f -o %o -lstdc++ |>
