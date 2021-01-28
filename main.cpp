@@ -1,7 +1,8 @@
-#include <help/help.h>
+#include <help/Help.h>
 
 int main(int argc, char* argv[])
 {
-    get_it_done();
+    Help h;
+    h();
     return 0;
 }
