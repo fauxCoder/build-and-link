@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[])
 {
-    Help h;
-    h();
+    Help helper;
+    helper();
     return 0;
 }
