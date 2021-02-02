@@ -1,5 +1,10 @@
 CXX = clang
 
-!compile = |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) -std=c++17 |>
+CXX_OPTIONS += -std=c++17
+CXX_OPTIONS += -O0
+
+LINKER_OPTIONS += -lstdc++
+
+!compile = |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) $(CXX_OPTIONS) |>
 !archive = |> ar crs %o %f |>
-!link = |> $(CXX) %f -o %o -lstdc++ |>
+!link = |> $(CXX) %f -o %o $(LINKER_OPTIONS) |>

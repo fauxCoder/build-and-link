@@ -2,7 +2,12 @@
 
 #include <iostream>
 
-void Help::operator()()
+Help::Help(std::string name)
+: m_name(name)
 {
-    std::cout << "Hello, Tup." << std::endl;
+}
+
+void Help::operator()() const
+{
+    std::cout << "Hello, " << m_name << "." << std::endl;
 }

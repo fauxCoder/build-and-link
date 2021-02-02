@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[])
 {
-    Help helper;
+    const Help helper("Tup");
     helper();
     return 0;
 }
