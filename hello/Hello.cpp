@@ -1,13 +1,13 @@
-#include <help/Help.h>
+#include <hello/Hello.h>
 
 #include <iostream>
 
-Help::Help(std::string name)
+Hello::Hello(std::string name)
 : m_name(name)
 {
 }
 
-void Help::operator()() const
+void Hello::operator()() const
 {
     std::cout << "Hello, " << m_name << "." << std::endl;
 }

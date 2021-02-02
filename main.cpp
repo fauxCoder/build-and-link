@@ -1,8 +1,8 @@
-#include <help/Help.h>
+#include <hello/Hello.h>
 
 int main(int argc, char* argv[])
 {
-    const Help helper("Tup");
-    helper();
+    const Hello hello("Tup");
+    hello();
     return 0;
 }

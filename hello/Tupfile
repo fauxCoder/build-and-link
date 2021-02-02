@@ -4,6 +4,6 @@ INCLUDE_FLAGS = -I..
 
 : foreach *.cpp |> !compile |> %B.o
 
-: *.o |> !archive |> help.a
+: *.o |> !archive |> lib%d.a
 
 .gitignore

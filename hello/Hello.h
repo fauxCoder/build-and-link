@@ -2,12 +2,12 @@
 
 #include <string>
 
-class Help
+class Hello
 {
     std::string m_name;
 
 public:
-    Help(std::string);
+    Hello(std::string);
 
     void operator()() const;
 };
