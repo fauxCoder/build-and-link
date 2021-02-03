@@ -1,10 +1,10 @@
 CXX = clang
 
-CXX_OPTIONS += -std=c++17
-CXX_OPTIONS += -O0
+CXX_FLAGS += -std=c++17
+CXX_FLAGS += -O0
 
-LINKER_OPTIONS += -lstdc++
+LINKER_FLAGS += -lstdc++
 
-!compile = |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) $(CXX_OPTIONS) |>
+!compile = |> $(CXX) -c %f -o %o $(INCLUDE_FLAGS) $(CXX_FLAGS) |>
 !archive = |> ar crs %o %f |>
-!link = |> $(CXX) %f -o %o $(LINKER_OPTIONS) |>
+!link = |> $(CXX) %f -o %o $(LINKER_FLAGS) |>
