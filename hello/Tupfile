@@ -1,6 +1,6 @@
 include_rules
 
-INCLUDE_FLAGS = -I..
+INCLUDE_FLAGS += -I..
 
 : foreach *.cpp |> !compile |> %B.o
 

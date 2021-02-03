@@ -1,7 +1,7 @@
 # include definitions from Tuprules.tup
 include_rules
 
-INCLUDE_FLAGS = -I.
+INCLUDE_FLAGS += -I.
 
 # compile the cpp's, invoking the compiler for each individual file
 : foreach *.cpp |> !compile |> %B.o
