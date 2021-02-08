@@ -6,7 +6,7 @@ INCLUDE_FLAGS += -I.
 # compile the cpp's, invoking the compiler for each individual file
 : foreach *.cpp |> !compile |> %B.o
 
-# link the o's + the static lib in a single invocation of the linker
+# link the o's + the static libs in a single invocation of the linker
 : *.o hello/*.a |> !link |> example
 
 # generate a .gitignore which ignores itself + any output files
